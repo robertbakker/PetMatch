@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="1">
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        card_view:cardCornerRadius="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:elevation="6dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="45dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/image"
+                android:src="@drawable/image1" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/left_indicator"
+            android:alpha="0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/paw"
+            android:layout_marginTop="-30dp"
+            />
+
+        <ImageView
+            android:id="@+id/right_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:src="@drawable/claw_mark1"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
+            android:alpha="0" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom">
+
+            <TextView
+                android:id="@+id/title"
+                style="@android:style/TextAppearance.Large.Inverse"
+                android:textColor="@color/color1"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color4"
+                tools:text="Title"
+                android:padding="10dp"
+                android:layout_alignBottom="@+id/card_view"
+                android:layout_alignParentStart="true" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

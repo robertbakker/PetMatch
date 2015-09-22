@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.robert.petmatch.MainActivityFindPetFragment">
+
+     <com.lorentzos.flingswipe.SwipeFlingAdapterView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:id="@+id/card_container"
+        app:rotation_degrees="16"
+        app:max_visible="4"
+        app:min_adapter_stack="6"
+        tools:context=".MainActivity"/>
+
+
+    <com.example.robert.petmatch.views.CustomImageButton
+        android:id="@+id/buttonDislike"
+        android:src="@drawable/cancel"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <com.example.robert.petmatch.views.CustomImageButton
+        android:id="@+id/buttonLike"
+        android:src="@drawable/heart_icon"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+    />
+
+
+</RelativeLayout>
