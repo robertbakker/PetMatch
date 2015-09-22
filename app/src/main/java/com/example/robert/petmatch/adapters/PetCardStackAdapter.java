@@ -56,11 +56,11 @@ public class PetCardStackAdapter extends BaseAdapter {
         // Map from Pet model values into views
         Pet item = getItem(position);
         int imageResource = getContext().getResources().getIdentifier(item.getImage(), "drawable", getContext().getPackageName());
-        int familyId = getContext().getResources().getIdentifier("pet.family." + item.getFamily(), "string", getContext().getPackageName());
-        String family = getContext().getResources().getString(familyId);
+        int speciesId = getContext().getResources().getIdentifier("pet.species." + item.getSpecies(), "string", getContext().getPackageName());
+        String species = getContext().getResources().getString(speciesId);
 
         holder.image.setImageResource(imageResource);
-        holder.title.setText(item.getName() + " de " + family.toLowerCase());
+        holder.title.setText(item.getName() + " de " + species.toLowerCase());
 
         // Make a visually nice stack of cards
         view.setTranslationY(position * 10);

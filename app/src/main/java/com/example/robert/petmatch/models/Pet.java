@@ -7,13 +7,13 @@ import java.io.Serializable;
  */
 public class Pet implements Serializable {
     private String name;
-    private String family;
+    private String species;
     private String description;
     private String image;
 
-    public Pet(String name, String family, String description, String image) {
+    public Pet(String name, String species, String description, String image) {
         this.name = name;
-        this.family = family;
+        this.species = species;
         this.image = image;
 
         this.description = description;
@@ -27,8 +27,8 @@ public class Pet implements Serializable {
         return description;
     }
 
-    public String getFamily() {
-        return family;
+    public String getSpecies() {
+        return species;
     }
 
     public String getImage() {
