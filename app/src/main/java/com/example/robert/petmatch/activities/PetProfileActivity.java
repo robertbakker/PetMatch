@@ -1,12 +1,15 @@
-package com.example.robert.petmatch;
+package com.example.robert.petmatch.activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.robert.petmatch.R;
 import com.example.robert.petmatch.models.Pet;
 
 import butterknife.Bind;
@@ -17,6 +20,9 @@ public class PetProfileActivity extends AppCompatActivity {
     @Bind(R.id.name)
     TextView name;
 
+    @Bind(R.id.image)
+    ImageView image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +30,12 @@ public class PetProfileActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Intent i = getIntent();
-        Pet pet = (Pet)i.getSerializableExtra("Pet");
+        Pet pet = (Pet) i.getSerializableExtra("Pet");
 
         name.setText(pet.getName());
+
+        int imageResource = getResources().getIdentifier(pet.getImage(), "drawable", getPackageName());
+        image.setImageResource(imageResource);
     }
 
 
@@ -45,7 +54,7 @@ public class PetProfileActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_reset) {
             return true;
         }
 

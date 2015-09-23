@@ -59,10 +59,11 @@ public class PetCardStackAdapter extends BaseAdapter {
         holder.image.setImageResource(imageResource);
 
         // Assemble the translated strings ( i.e. Bobby the dog )
-        int speciesId = getContext().getResources().getIdentifier("pet.species." + item.getSpecies(), "string", getContext().getPackageName());
+        int speciesId = getContext().getResources().getIdentifier("pet_species_" + item.getSpecies(), "string", getContext().getPackageName());
         String species = getContext().getResources().getString(speciesId);
-        String grammarArticle = getContext().getResources().getString(getContext().getResources().getIdentifier("grammar.article", "string", getContext().getPackageName()));
-        holder.title.setText(item.getName() + " " + grammarArticle + " " + species.toLowerCase());
+
+        String petTitle = getContext().getResources().getString(getContext().getResources().getIdentifier("pet_title", "string", getContext().getPackageName()));
+        holder.title.setText(String.format(petTitle, item.getName(), species.toLowerCase()));
 
         // Make a visually nice stack of cards
         view.setTranslationY(position * 10);
