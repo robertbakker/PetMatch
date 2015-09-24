@@ -58,12 +58,12 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_PETS);
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (1, 'Johan', 'giraffe', 'Lief', 'image1', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (2, 'Kiki', 'frog', 'Lief', 'image2', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (3, 'Betty', 'baboon', 'Lief', 'image3', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (4, 'Johan', 'giraffe', 'Lief', 'image1', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (5, 'Kiki', 'frog', 'Lief', 'image2', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
-        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (6, 'Betty', 'baboon', 'Lief', 'image3', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (1, 'Johan', 'giraffe', 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', 'image1', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (2, 'Kiki', 'frog', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis ultrices mi non laoreet. Vivamus. ', 'image2', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (3, 'Betty', 'baboon', 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', 'image3', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (4, 'Johan', 'giraffe', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis ultrices mi non laoreet. Vivamus. ', 'image1', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (5, 'Kiki', 'frog', 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...', 'image2', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
+        db.execSQL("INSERT INTO " + TABLE_PETS + " VALUES (6, 'Betty', 'baboon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis ultrices mi non laoreet. Vivamus.', 'image3', '" + Pet.STATUS_UNDECIDED + "', '2015-02-03 18:00:00')");
     }
 
     @Override
@@ -163,7 +163,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put(KEY_DESCRIPTION, pet.getDescription());
         values.put(KEY_IMAGE, pet.getImage());
         values.put(KEY_STATUS, pet.getStatus());
-
+        Log.e(LOG, values.toString());
         // updating row
         return db.update(TABLE_PETS, values, KEY_ID + " = ?",
                 new String[]{String.valueOf(pet.getId())});

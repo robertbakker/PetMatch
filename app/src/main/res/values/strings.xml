@@ -20,4 +20,6 @@
     <string name="title_activity_pet_profile">Profiel</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_list_favorites">Mijn favorieten</string>
+
+    <string name="pet_profile_about">Over %1$s</string>
 </resources>

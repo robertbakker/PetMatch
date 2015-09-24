@@ -23,6 +23,12 @@ public class PetProfileActivity extends AppCompatActivity {
     @Bind(R.id.image)
     ImageView image;
 
+    @Bind(R.id.aboutText)
+    TextView aboutText;
+
+    @Bind(R.id.descriptionText)
+    TextView descriptionText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +38,15 @@ public class PetProfileActivity extends AppCompatActivity {
         Intent i = getIntent();
         Pet pet = (Pet) i.getSerializableExtra("Pet");
 
-        name.setText(pet.getName());
+        String species = getString(getResources().getIdentifier("pet_species_" + pet.getSpecies(), "string", getPackageName())).toLowerCase();
+
+        name.setText(String.format(getString(R.string.pet_title), pet.getName(), species));
 
         int imageResource = getResources().getIdentifier(pet.getImage(), "drawable", getPackageName());
         image.setImageResource(imageResource);
+
+        aboutText.setText(String.format(getString(R.string.pet_profile_about), pet.getName()));
+        descriptionText.setText(pet.getDescription());
     }
 
 
